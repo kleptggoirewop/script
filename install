@@ -61,10 +61,10 @@ sleep 5
 ipsaya=$(wget -qO- ipinfo.io/ip)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/jfeejfee/repo1/main/ip"
+data_ip="https://raw.githubusercontent.com/kleptggoirewop/script/main/ip"
 function CEKIPX() {
 MYIP=$(curl -sS ipv4.icanhazip.com)
-IPVPS=$(curl -sS https://raw.githubusercontent.com/jfeejfee/repo1/main/ip | grep $MYIP | awk '{print $4}')
+IPVPS=$(curl -sS https://raw.githubusercontent.com/kleptggoirewop/script/main/ip | grep $MYIP | awk '{print $4}')
 if [[ $MYIP == $IPVPS ]]; then
 clear
 else
@@ -134,7 +134,7 @@ USERGIT=$(cat /etc/github/username)
 hhari=$(date -d "$web3 days" +"%Y-%m-%d")
 mkdir /root/myridwan
 cd /root/myridwan
-wget https://raw.githubusercontent.com/jfeejfee/repo1/main/ip >/dev/null 2>&1
+wget https://raw.githubusercontent.com/kleptggoirewop/script/main/ip >/dev/null 2>&1
 if [ "$web4" = "ON" ]; then
 sed -i "/# RESELLER/a ### ${author} ${hhari} ${MYIP} ${web4} ${web5}" /root/myridwan/ip
 else
@@ -169,7 +169,7 @@ USERGIT=$(cat /etc/github/username)
 hhari=$(date -d "$KEY2 days" +"%Y-%m-%d")
 mkdir /root/myridwan
 cd /root/myridwan
-wget https://raw.githubusercontent.com/jfeejfee/repo1/main/ip >/dev/null 2>&1
+wget https://raw.githubusercontent.com/kleptggoirewop/script/main/ip >/dev/null 2>&1
 if [ "$ADMIN" = "ON" ]; then
 sed -i "/# RESELLER/a ### ${author} ${hhari} ${MYIP} ${ADMIN} ${TOTALIP}" /root/myridwan/ip
 else
@@ -268,9 +268,9 @@ clear
 #########################
 # USERNAME
 rm -f /usr/bin/user
-username=$(curl https://raw.githubusercontent.com/jfeejfee/repo1/main/ip | grep $MYIP | awk '{print $2}')
+username=$(curl https://raw.githubusercontent.com/kleptggoirewop/script/main/ip | grep $MYIP | awk '{print $2}')
 echo "$username" >/usr/bin/user
-expx=$(curl https://raw.githubusercontent.com/jfeejfee/repo1/main/ip | grep $MYIP | awk '{print $3}')
+expx=$(curl https://raw.githubusercontent.com/kleptggoirewop/script/main/ip | grep $MYIP | awk '{print $3}')
 echo "$expx" >/usr/bin/e
 # รายละเอียดการสั่งซื้อ
 username=$(cat /usr/bin/user)
@@ -294,7 +294,7 @@ mai="datediff "$Exp" "$DATE""
 Info="(${green} ใช้งานได้ ${NC})"
 Error="(${RED} หมดอายุ ${NC})"
 today=`date -d "0 days" +"%Y-%m-%d"`
-Exp1=$(curl https://raw.githubusercontent.com/jfeejfee/repo1/main/ip | grep $MYIP | awk '{print $4}')
+Exp1=$(curl https://raw.githubusercontent.com/kleptggoirewop/script/main/ip | grep $MYIP | awk '{print $4}')
 if [[ $today < $Exp1 ]]; then
 sts="${Info}"
 else
