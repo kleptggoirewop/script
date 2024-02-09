@@ -36,7 +36,7 @@ function LOGO() {
     │    ${YELLOW}ลิขสิทธิ์${FONT} (C)$GRAY https://github.com/kytxz$NC     │
     └───────────────────────────────────────────────┘
          ${RED}Autoscript xray vpn lite (multi port)${FONT}    
-${RED}โปรดตรวจสอบให้แน่ใจว่าอินเทอร์เน็ตเสถียรระหว่างการติดตั้งสคริปต์${FONT}
+${RED}โปรดตรวจสอบให้แน่ใจว่าอินเตอร์เน็ตเสถียรระหว่างการติดตั้งสคริปต์หรือไม่${FONT}
         "
 }
 clear
@@ -50,10 +50,10 @@ clear;clear;clear
 
   # // แบนเนอร์
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
-echo -e "  ยินดีต้อนรับสู่ตัวติดตั้งสคริปต์โปรเจค Kyt ${YELLOW}(${NC}${green} รุ่นเสถียร ${NC}${YELLOW})${NC}"
+echo -e "  ยินดีต้อนรับสู่การติดตั้งสคริปต์ Project Thaipro VPN ${YELLOW}(${NC}${green} อนุญาตสิทธิเฉพาะเเอปในเครือ Thaipro VPN เท่านั้น ${NC}${YELLOW})${NC}"
 echo -e "     สคริปต์นี้จะช่วยตั้งค่าเซิร์ฟเวอร์ VPN บนเซิร์ฟเวอร์ของคุณ"
-echo -e "         ผู้สร้าง : ${green}MYRIDWAN ${NC}${YELLOW}(${NC} ${green}โปรเจค Geo ${NC}${YELLOW})${NC}"
-echo -e "       © รีโค้ดโดย Geo Project ${YELLOW}(${NC} 2023 ${YELLOW})${NC}"
+echo -e "         ผู้สร้าง : ${green} MYRIDWAN ${NC}${YELLOW}(${NC} ${green} สคริปต์ตัวใหม่ ฉบับปรับปรุง ${NC}${YELLOW})${NC}"
+echo -e "       © ปรับเเต่งโดย admin Thaipro VPN ${YELLOW}(${NC} 2024 ${YELLOW})${NC}"
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
 echo ""
 sleep 5
@@ -73,10 +73,10 @@ fi
 }
   # // แบนเนอร์
 #echo -e "${RED}◇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◇${NC}"
-#echo -e "  ยินดีต้อนรับสู่ตัวจัดการสคริปต์โปรเจค MyridTunnel ${BLUE}(${NC}${BLUE} อัพเดทล่าสุด ${NC}${BLUE})${NC}"
+#echo -e "  ยินดีต้อนรับสู่ตัวจัดการสคริปต์ Project Thaipro VPN ${BLUE}(${NC}${BLUE} อัปเดตล่าสุด ${NC}${BLUE})${NC}"
 #echo -e "     สคริปต์นี้จะช่วยตั้งค่าเซิร์ฟเวอร์ VPN บนเซิร์ฟเวอร์ของคุณ"
-#echo -e "         ผู้สร้าง : ${BLUE}MYRID ${NC}${BLUE}(${NC} ${BLUE} โปรเจค MyridTunnel ${NC}${BLUE})${NC}"
-#echo -e "       © รีโค้ดโดยโปรเจค MyridTunnel ${BLUE}(${NC} 2023 ${BLUE})${NC}"
+#echo -e "         ผู้สร้าง : ${BLUE} MYRID ${NC}${BLUE}(${NC} ${BLUE} Project Thaipro VPN ${NC}${BLUE})${NC}"
+#echo -e "       © ปรับเเต่งโดย Thaipro VPN ${BLUE}(${NC} 2024 ${BLUE})${NC}"
 #echo -e "${RED}◇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◇${NC}"
 #echo ""
 #sleep 3
@@ -99,7 +99,7 @@ echo ""
 function key2(){
 clear
 echo -e  "${REDBG}┌──────────────────────────────────────────┐${NC}"
-echo -e  "${REDBG}│              กรอกคีย์ลิขสิทธิ์             │${NC}"
+echo -e  "${REDBG}│              กรอกคีย์เข้าถึงสิทธิ์ภายในสคริปต์             │${NC}"
 echo -e  "${REDBG}└──────────────────────────────────────────┘${NC}"
 echo " "
 read -rp "กรอกคีย์ของคุณที่นี่ (Ctrl + C เพื่อออก) : " -e kode
@@ -213,43 +213,43 @@ key2
 fi
 }
 ##อนุญาต IP และ TRIAL SC 
-# // ตรวจสอบสถาปัตยกรรม OS
+# // ตรวจสอบ OS
 LOGO
 if [[ $( uname -m | awk '{print $1}' ) == "x86_64" ]]; then
-    echo -e "${OK} สถาปัตยกรรมของคุณได้รับการสนับสนุน ( ${green}$( uname -m )${NC} )"
+    echo -e "${OK} OS VPS ของคุณรองรับ ( ${green}$( uname -m )${NC} )"
 else
-    echo -e "${EROR} สถาปัตยกรรมของคุณไม่ได้รับการสนับสนุน ( ${YELLOW}$( uname -m )${NC} )"
+    echo -e "${EROR} OS VPS ของคุณไม่รองรับ ( ${YELLOW}$( uname -m )${NC} )"
     exit 1
 fi
 
-# // ตรวจสอบระบบ
+# // ตรวจสอบสิทธิ์การเข้าถึงสคริปต์
 if [[ $( cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g' ) == "ubuntu" ]]; then
-    echo -e "${OK} ระบบของคุณได้รับการสนับสนุน ( ${green}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
+    echo -e "${OK} คุณได้รับอนุญาตในการเข้าถึงสคริปต์ ( ${green}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
 elif [[ $( cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g' ) == "debian" ]]; then
-    echo -e "${OK} ระบบของคุณได้รับการสนับสนุน ( ${green}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
+    echo -e "${OK} คุณได้รับอนุญาตในการเข้าถึงสคริปต์ ( ${green}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
 else
-    echo -e "${EROR} ระบบของคุณไม่ได้รับการสนับสนุน ( ${YELLOW}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
+    echo -e "${EROR} โปรดลองใหม่อีกครั้งในภายหลัง ( ${YELLOW}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
     exit 1
 fi
 
 # // ตรวจสอบ IP Address
 if [[ $IP == "" ]]; then
-    echo -e "${EROR} IP Address ( ${YELLOW}ไม่พบข้อมูล${NC} )"
+    echo -e "${EROR} IP Address ( ${YELLOW} ไม่พบข้อมูล ${NC} )"
 else
     echo -e "${OK} IP Address ( ${green}$IP${NC} )"
 fi
 
-# // การตรวจสอบที่สำเร็จ
+# // ตรวจสอบความถูกต้องเรียบร้อยเเล้ว
 echo ""
-read -p "$( echo -e "กด ${GRAY}[ ${NC}${green}Enter${NC} ${GRAY}]${NC} เพื่อเริ่มต้นการติดตั้ง") "
+read -p "$( echo -e "กด ${GRAY}[ ${NC}${green} Enter ${NC} ${GRAY}]${NC} เพื่อเริ่มต้นการติดตั้ง") "
 echo ""
 clear
 if [ "${EUID}" -ne 0 ]; then
-		echo "คุณต้องเรียกใช้สคริปต์นี้ในฐานะ root"
+		echo "คุณต้องเรียกใช้สคริปต์นี้ในฐาน root"
 		exit 1
 fi
 if [ "$(systemd-detect-virt)" == "openvz" ]; then
-		echo "OpenVZ ไม่ได้รับการสนับสนุน"
+		echo "OpenVZ ไม่ได้รับอนุญาตสิทธิ์ในการเข้าถึงสคริปต์"
 		exit 1
 fi
 red='\e[1;31m'
@@ -290,9 +290,9 @@ datediff() {
 }
 mai="datediff "$Exp" "$DATE""
 
-# สถานะ ExpiRED Active | Geo Project
-Info="(${green}ใช้งานได้${NC})"
-Error="(${RED}หมดอายุ${NC})"
+# สถานะ ExpiRED Active Project Thaipro VPN 
+Info="(${green} ใช้งานได้ ${NC})"
+Error="(${RED} หมดอายุ ${NC})"
 today=`date -d "0 days" +"%Y-%m-%d"`
 Exp1=$(curl https://raw.githubusercontent.com/jfeejfee/repo1/main/ip | grep $MYIP | awk '{print $4}')
 if [[ $today < $Exp1 ]]; then
@@ -316,7 +316,7 @@ function print_ok() {
 }
 function print_install() {
 echo -e "${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e "${tyblue}│ 🌿 $1 ${FONT} ${NC}"
+echo -e "${tyblue}│ 🌞 $1 ${FONT} ${NC}"
 echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
     sleep 2
 }
@@ -328,7 +328,7 @@ function print_error() {
 function print_success() {
     if [[ 0 -eq $? ]]; then
         echo -e "${tyblue}┌──────────────────────────────────────────┐${NC}"
-        echo -e "${tyblue}│ 🌿 $1 ติดตั้งสำเร็จ ${NC}"
+        echo -e "${tyblue}│ ✅ $1 ติดตั้งสำเร็จ ${NC}"
         echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
         sleep 2
     fi
@@ -337,9 +337,9 @@ function print_success() {
 ### ตรวจสอบ root
 function is_root() {
     if [[ 0 == "$UID" ]]; then
-        print_ok "ผู้ใช้ root เริ่มกระบวนการติดตั้ง"
+        print_ok "username root เริ่มกระบวนการติดตั้ง"
     else
-        print_error "ผู้ใช้ปัจจุบันไม่ใช่ผู้ใช้ root, โปรดสลับไปใช้ผู้ใช้ root และรันสคริปต์อีกครั้ง"
+        print_error "username ปัจจุบันไม่ใช่ root, โปรดสลับไปใช้ username root และรันสคริปต์ใหม่อีกครั้ง"
     fi
 
 }
@@ -398,7 +398,7 @@ elif [[ $(cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"/
     sudo apt-get update
     apt-get -y install haproxy=1.8.\*
 else
-    echo -e " ระบบของคุณไม่ได้รับการสนับสนุน ($(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g') )"
+    echo -e " ระบบของคุณไม่ได้รับสิทธิ์ในการเข้าถึงสคริปต์ ($(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g') )"
     exit 1
 fi
 }
@@ -415,7 +415,7 @@ function nginx_install() {
         print_success "ตั้งค่า nginx สำหรับระบบ $(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')"
         apt -y install nginx 
     else
-        echo -e " ระบบของคุณไม่ได้รับการสนับสนุน ( ${YELLOW}$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')${FONT} )"
+        echo -e " ระบบของคุณไม่ได้รับสิทธิ์ในการเข้าถึงสคริปต์ ( ${YELLOW}$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')${FONT} )"
         # // exit 1
     fi
 }
@@ -465,7 +465,7 @@ fun_bar() {
     echo -ne "  \033[0;33mกำลังโหลดติดตั้ง.. \033[1;37m- \033[0;33m["
     while true; do
         for ((i = 0; i < 18; i++)); do
-            echo -ne "\033[0;32m🌏"
+            echo -ne "\033[0;32m🌀"
             sleep 0.1s
         done
         [[ -e $HOME/fim ]] && rm $HOME/fim && break
@@ -1359,15 +1359,15 @@ echo -e "${tyblue}│${pth}   - Haproxy Loadbalancer    : 443, 80       ${tyblue
 #echo -e "${tyblue}│${pth}   - DNS Client              : 443, 88       ${tyblue}│${NC}"
 echo -e "${tyblue}│${pth}   - OpenVPN Websocket SSL   : 443           ${tyblue}│${NC}"
 #echo -e "${tyblue}│${pth}   - XRAY DNS (SLOWDNS)      : 443, 53       ${tyblue}│${NC}"
-echo -e "${tyblue}│${pth}   - XRAY Vmess TLS          : 443           ${tyblue}│${NC}"
-echo -e "${tyblue}│${pth}   - XRAY Vmess gRPC         : 443           ${tyblue}│${NC}"
-echo -e "${tyblue}│${pth}   - XRAY Vmess None TLS     : 80            ${tyblue}│${NC}"
-echo -e "${tyblue}│${pth}   - XRAY Vless TLS          : 443           ${tyblue}│${NC}"
-echo -e "${tyblue}│${pth}   - XRAY Vless gRPC         : 443           ${tyblue}│${NC}"
-echo -e "${tyblue}│${pth}   - XRAY Vless None TLS     : 80            ${tyblue}│${NC}"
-echo -e "${tyblue}│${pth}   - Trojan gRPC             : 443           ${tyblue}│${NC}"
-echo -e "${tyblue}│${pth}   - Trojan WS               : 443           ${tyblue}│${NC}"
-echo -e "${tyblue}│${pth}   - Shadowsocks WS          : 443           ${tyblue}│${NC}"
+echo -e "${tyblue}│${pth}   - XRAY Vmess TLS          : 443, 8000, 11590           ${tyblue}│${NC}"
+echo -e "${tyblue}│${pth}   - XRAY Vmess gRPC         : 443, 8000, 11590          ${tyblue}│${NC}"
+echo -e "${tyblue}│${pth}   - XRAY Vmess None TLS     : 80, 443, 8080, 8880            ${tyblue}│${NC}"
+echo -e "${tyblue}│${pth}   - XRAY Vless TLS          : 443, 8000, 11590           ${tyblue}│${NC}"
+echo -e "${tyblue}│${pth}   - XRAY Vless gRPC         : 443, 8000, 11590          ${tyblue}│${NC}"
+echo -e "${tyblue}│${pth}   - XRAY Vless None TLS     : 80, 443, 8080, 8880            ${tyblue}│${NC}"
+echo -e "${tyblue}│${pth}   - Trojan gRPC             : 443, 8000, 11590           ${tyblue}│${NC}"
+echo -e "${tyblue}│${pth}   - Trojan WS               : 443, 8080, 8880          ${tyblue}│${NC}"
+echo -e "${tyblue}│${pth}   - Shadowsocks WS          : 443, 8080, 8880           ${tyblue}│${NC}"
 echo -e "${tyblue}│${pth}   - BadVPN 1                : 7100          ${tyblue}│${NC}"
 echo -e "${tyblue}│${pth}   - BadVPN 2                : 7200          ${tyblue}│${NC}"
 echo -e "${tyblue}│${pth}   - BadVPN 3                : 7300          ${tyblue}│${NC}"
