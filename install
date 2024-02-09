@@ -81,33 +81,6 @@ fi
 #echo ""
 #sleep 3
 ##
-echo -e  "${REDBG}┌──────────────────────────────────────────┐${NC}"
-echo -e  "${REDBG}│              กรอกชื่อของคุณ              │${NC}"
-echo -e  "${REDBG}└──────────────────────────────────────────┘${NC}"
-echo " "
-until [[ $name =~ ^[a-zA-Z0-9_.-]+$ ]]; do
-read -rp "กรอกชื่อของคุณที่นี่โดยไม่มีช่องว่าง : " -e name
-done
-rm -rf /etc/profil
-echo "$name" > /etc/profil
-echo ""
-clear
-author=$(cat /etc/profil)
-echo ""
-echo ""
-
-function key2(){
-clear
-echo -e  "${REDBG}┌──────────────────────────────────────────┐${NC}"
-echo -e  "${REDBG}│              กรอกคีย์เข้าถึงสิทธิ์ภายในสคริปต์             │${NC}"
-echo -e  "${REDBG}└──────────────────────────────────────────┘${NC}"
-echo " "
-read -rp "กรอกคีย์ของคุณที่นี่ (Ctrl + C เพื่อออก) : " -e kode
-
-if [ -z $kode ]; then
-echo -e "คีย์ผิด โปรดกรอกคีย์ใหม่"
-key2
-fi
 
 LIST=$(curl -sS https://raw.githubusercontent.com/myridwan/license/ipuk/key | grep $kode | awk '{print $2}')
 Key=$(curl -sS https://raw.githubusercontent.com/myridwan/license/ipuk/key | grep $kode | awk '{print $3}')
@@ -207,7 +180,7 @@ rm -rf /root/myridwan
 rm -rf /etc/github
 clear
 else
-echo -e "คีย์ผิด โปรดกรอกคีย์ใหม่"
+
 sleep 1
 key2
 fi
@@ -290,18 +263,6 @@ datediff() {
 }
 mai="datediff "$Exp" "$DATE""
 
-# สถานะ ExpiRED Active Project Thaipro VPN 
-Info="(${green} ใช้งานได้ ${NC})"
-Error="(${RED} หมดอายุ ${NC})"
-today=`date -d "0 days" +"%Y-%m-%d"`
-Exp1=$(curl https://raw.githubusercontent.com/kleptggoirewop/script/main/ip | grep $MYIP | awk '{print $4}')
-if [[ $today < $Exp1 ]]; then
-sts="${Info}"
-else
-sts="${Error}"
-fi
-echo -e "\e[32mกำลังโหลด...\e[0m"
-clear
 # REPO    
     REPO="https://raw.githubusercontent.com/gotza02/script/main/filedownload/"
 
